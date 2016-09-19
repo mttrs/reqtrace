@@ -33,6 +33,7 @@ Content-Type:   application/json
 Method:         GET
 Body:
 
+
 # chrome
 Remote address: [::1]:54374
 Request URI:    /favicon.ico
