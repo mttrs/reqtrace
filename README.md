@@ -1,7 +1,13 @@
 # reqtrace
 
+## Install
+```
+% go get github.com/mttrs/reqtrace
+```
+
 ## Build & Run
 ```
+% cd $GOPATH/src/github.com/mttrs/reqtrace
 % go build
 % ./reqtrace
 Running on 8080 port
