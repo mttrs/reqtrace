@@ -54,12 +54,17 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Return nothing
-	fmt.Fprintf(w, "")
+	fmt.Fprintf(w, "kk")
 }
 
 func main() {
 	http.HandleFunc("/", handler)
-	fmt.Println("Running on 8080 port")
 
-	http.ListenAndServe(":8080", nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	fmt.Println("Running on:", port, "...")
+
+	http.ListenAndServe(":"+port, nil)
 }
