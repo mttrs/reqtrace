@@ -1,5 +1,7 @@
 # reqtrace
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/mttrs/reqtrace)](https://goreportcard.com/report/github.com/mttrs/reqtrace)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mttrs/reqtrace/tree/master)
 
 ## Install
