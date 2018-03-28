@@ -19,9 +19,9 @@ Running on 8080 port
 
 ### Request trace sample
 ```
-% curl -X POST -d '{"drink": "coffee"}' -H "Content-Type: application/json" http://localhost:8080?name=me
+% curl -X POST -d '{"drink": "coffee"}' -H "Content-Type: application/json" http://localhost:8080?name=takoyaki
 
-POST /?name=me HTTP/1.1
+POST /?name=takoyaki HTTP/1.1
 Host: localhost:8080
 Accept: */*
 Content-Length: 19
