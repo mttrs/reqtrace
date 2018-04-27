@@ -1,4 +1,12 @@
 {
   "name": "Request trace",
-  "repository": "https://github.com/mttrs/reqtrace"
+  "repository": "https://github.com/mttrs/reqtrace",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.6"
+      }
+    }
+  ]
 }
