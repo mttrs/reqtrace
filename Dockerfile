@@ -8,4 +8,4 @@ RUN cd /src && go build -o reqtrace
 FROM alpine
 WORKDIR /app
 COPY --from=build /src/reqtrace /app/
-CMD ./reqtrace
+CMD ["./reqtrace"]
