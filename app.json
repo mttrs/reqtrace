@@ -5,5 +5,12 @@
     {
       "plan": "papertrail:choklad"
     }
-  ]
+  ],
+  "environments": {
+    "test": {
+      "addons":[
+        "papertrail:choklad"
+      ]
+    }
+  }
 }
