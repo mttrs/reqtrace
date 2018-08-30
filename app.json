@@ -1,4 +1,9 @@
 {
   "name": "Request trace",
-  "repository": "https://github.com/mttrs/reqtrace"
+  "repository": "https://github.com/mttrs/reqtrace",
+  "addons": [
+    {
+      "plan": "papertrail:choklad"
+    }
+  ]
 }
