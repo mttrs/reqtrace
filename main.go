@@ -15,6 +15,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	dyno := os.Getenv("DYNO")
+	fmt.Println("DYNO:", dyno)
+
 	fmt.Println(string(dump))
 	fmt.Fprintf(w, "go!\n")
 }
