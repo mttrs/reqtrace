@@ -3,7 +3,8 @@
   "repository": "https://github.com/mttrs/reqtrace",
   "addons": [
     {
-      "plan": "papertrail:choklad"
+      "plan": "papertrail:choklad",
+      "plan": "heroku-kafka:basic-0"
     }
   ]
 }
