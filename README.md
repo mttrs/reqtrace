@@ -6,20 +6,20 @@
 
 ## Install
 ```
-% go get github.com/mttrs/reqtrace
+$ go get github.com/mttrs/reqtrace
 ```
 
 ## Build & Run
 ```
-% cd $GOPATH/src/github.com/mttrs/reqtrace
-% go build
-% ./reqtrace
+$ cd $GOPATH/src/github.com/mttrs/reqtrace
+$ go build
+$ ./reqtrace
 Running on 8080 port
 ```
 
 ### Request trace sample
 ```
-% curl -X POST -d '{"drink": "coffee"}' -H "Content-Type: application/json" http://localhost:8080?name=takoyaki
+$ curl -X POST -d '{"drink": "coffee"}' -H "Content-Type: application/json" http://localhost:8080?name=takoyaki
 
 POST /?name=takoyaki HTTP/1.1
 Host: localhost:8080
