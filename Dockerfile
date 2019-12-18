@@ -13,7 +13,7 @@ WORKDIR /app
 COPY --from=build $BUILD_DIR/reqtrace /app/
 
 # Run the image as a non-root user
-RUN adduser -D myuser
-USER myuser
+RUN adduser -D user
+USER user
 
 CMD ["./reqtrace"]
