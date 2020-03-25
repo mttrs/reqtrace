@@ -7,6 +7,6 @@
     }
   ],
   "scripts": {
-    "pr-predestroy": "env"
+    "pr-predestroy": "curl https://mttr-reqtrace.herokuapp.com?prname=$HEROKU_APP_NAME"
   }
 }
