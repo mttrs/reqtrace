@@ -5,5 +5,8 @@
     {
       "plan": "papertrail:choklad"
     }
-  ]
+  ],
+  "scripts": {
+    "pr-predestroy": "env"
+  }
 }
