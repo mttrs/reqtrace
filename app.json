@@ -5,5 +5,15 @@
     {
       "plan": "papertrail:choklad"
     }
-  ]
+  ],
+  "buildpacks": [
+    { "url": "heroku/go" }
+  ],
+  {
+    "environments": {
+      "test": {
+        "addons": ["heroku-postgresql:in-dyno"]
+      }
+    }
+  }
 }
