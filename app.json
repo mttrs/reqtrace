@@ -11,7 +11,10 @@
   ],
   "environments": {
     "test": {
-      "addons": ["heroku-postgresql:in-dyno"]
+      "addons": ["heroku-postgresql:in-dyno"],
+      "scripts": {
+	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;'; pg_ctl restart; psql $DATABASE_URL -c 'SHOW max_connections;';"
+      }
     }
   }
 }
