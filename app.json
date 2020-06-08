@@ -13,7 +13,7 @@
     "test": {
       "addons": ["heroku-postgresql:in-dyno"],
       "scripts": {
-	"test": "go test"
+	"test": "psql $DATABASE_URL -c 'SHOW max_connections;' && go test"
       }
     }
   }
