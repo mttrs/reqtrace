@@ -13,7 +13,7 @@
     "test": {
       "addons": ["heroku-postgresql:in-dyno"],
       "scripts": {
-	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart && exit 1",
+	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart && exit 0",
 	"test": "go test"
       },
       "formation": {
