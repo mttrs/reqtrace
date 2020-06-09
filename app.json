@@ -12,15 +12,12 @@
   "environments": {
     "test": {
       "addons": ["heroku-postgresql:in-dyno"],
-      "scripts": {
-	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart -w && psql $DATABASE_URL -c 'SELECT 1;'",
-	"test": "go test"
+      "env": {
+        "HEROKU_CI_POSTGRES_FSYNC_OFF": "off"
       },
-      "formation": {
-          "test": {
-            "quantity": 1,
-            "size": "performance-l"
-          }
+      "scripts": {
+	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart -w",
+	"test": "go test"
       }
     }
   }
