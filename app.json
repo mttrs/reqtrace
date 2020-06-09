@@ -15,6 +15,12 @@
       "scripts": {
 	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart && exit 1",
 	"test": "go test"
+      },
+      "formation": {
+          "test": {
+            "quantity": 1,
+            "size": "performance-l"
+          }
       }
     }
   }
