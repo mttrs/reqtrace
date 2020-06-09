@@ -16,7 +16,7 @@
         "HEROKU_CI_POSTGRES_FSYNC_OFF": "off"
       },
       "scripts": {
-	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart -w",
+	"test-setup": "psql $DATABASE_URL -c 'ALTER SYSTEM SET max_connections=500;' && pg_ctl restart -w &",
 	"test": "go test"
       }
     }
