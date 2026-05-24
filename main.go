@@ -2,36 +2,35 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"log"
 	"net/http"
 	"net/http/httputil"
 	"os"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	// Take dump
 	dump, err := httputil.DumpRequest(r, true)
 	if err != nil {
 		http.Error(w, fmt.Sprint(err), http.StatusInternalServerError)
 		return
 	}
 
-	dyno := os.Getenv("DYNO")
-	fmt.Println("DYNO:", dyno)
+	if dyno := os.Getenv("DYNO"); dyno != "" {
+		log.Println("DYNO:", dyno)
+	}
+	log.Println(string(dump))
 
-	fmt.Println(string(dump))
 	fmt.Fprintf(w, "go!\n")
 }
 
 func cssHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "text/css")
-	d, err := ioutil.ReadFile("assets/main.css")
-
+	d, err := os.ReadFile("assets/main.css")
 	if err != nil {
-		fmt.Fprintf(w, "No such file\n")
-	} else {
-		fmt.Fprintf(w, string(d))
+		http.Error(w, "asset not found", http.StatusInternalServerError)
+		return
 	}
+	w.Header().Set("Content-Type", "text/css")
+	w.Write(d)
 }
 
 func main() {
@@ -42,7 +41,9 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	fmt.Println("Running on:", port, "...")
+	log.Println("Running on:", port)
 
-	http.ListenAndServe(":"+port, nil)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		log.Fatal(err)
+	}
 }
